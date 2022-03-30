@@ -1,5 +1,8 @@
 from pages.register_page import RegisterPage
+import pytest
 
+
+@pytest.mark.critical_check
 def test_registration(browser):
     register_link = "http://demowebshop.tricentis.com/register"
     register_page = RegisterPage(browser, register_link)

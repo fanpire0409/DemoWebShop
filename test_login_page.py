@@ -1,5 +1,8 @@
 from pages.login_page import LoginPage
+import pytest
 
+
+@pytest.mark.critical_check
 def test_log_in(browser):
     register_link = "http://demowebshop.tricentis.com/register"
     log_in_page = LoginPage(browser, register_link)

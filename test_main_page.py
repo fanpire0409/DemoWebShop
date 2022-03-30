@@ -3,6 +3,8 @@ from pages.register_page import RegisterPage
 from pages.login_page import LoginPage
 import pytest
 
+
+@pytest.mark.critical_check
 class TestLink():
     main_link = "http://demowebshop.tricentis.com/"
 

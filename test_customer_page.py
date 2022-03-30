@@ -1,7 +1,9 @@
 from pages.customer_page import CustomerPage
 import time
+import pytest
 
 
+@pytest.mark.critical_check
 def test_change_password(browser):
     register_link = "http://demowebshop.tricentis.com/register"
     customer_page = CustomerPage(browser, register_link)
