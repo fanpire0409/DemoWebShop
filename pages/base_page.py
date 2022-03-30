@@ -10,6 +10,9 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def check_user_log_in(self):
+        assert self.is_element_present(*BasePageLocators.LINK_ACCOUNT), "User isn't log in!"
+
     def create_user_data(self):
         np.random.seed(2)
         gender = np.random.choice(["M", "F"])
@@ -33,6 +36,10 @@ class BasePage():
         except NoSuchElementException:
             return False
         return True
+
+    def follow_the_customer_link(self):
+        customer_link = self.browser.find_element(*BasePageLocators.LINK_ACCOUNT)
+        customer_link.click()
 
     def follow_the_log_in_link(self):
         register_link = self.browser.find_element(*BasePageLocators.LOG_IN_LINK)

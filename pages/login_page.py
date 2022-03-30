@@ -1,9 +1,8 @@
 from .register_page import RegisterPage
 from .locators import LoginPageLocators
 
+
 class LoginPage(RegisterPage):
-    def check_user_log_in(self):
-        assert self.is_element_present(*LoginPageLocators.LINK_ACCOUNT), "User isn't log in!"
 
     def returning_customer(self, user_data):
         login_email = self.browser.find_element(*LoginPageLocators.FIELD_EMAIL)
