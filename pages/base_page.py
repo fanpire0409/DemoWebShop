@@ -34,12 +34,23 @@ class BasePage():
             return False
         return True
 
+    def follow_the_log_in_link(self):
+        register_link = self.browser.find_element(*BasePageLocators.LOG_IN_LINK)
+        register_link.click()
+
+    def follow_the_log_out_link(self):
+        register_link = self.browser.find_element(*BasePageLocators.LOG_OUT_LINK)
+        register_link.click()
+
     def follow_the_register_link(self):
         register_link = self.browser.find_element(*BasePageLocators.REGISTER_LINK)
         register_link.click()
 
     def open(self):
         self.browser.get(self.url)
+
+    def should_be_log_in_link(self):
+        assert self.is_element_present(*BasePageLocators.LOG_IN_LINK), "Log_in link is not presented"
 
     def should_be_register_link(self):
         assert self.is_element_present(*BasePageLocators.REGISTER_LINK), "Register link is not presented"

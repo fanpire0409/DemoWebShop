@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     REGISTER_LINK = (By.CSS_SELECTOR, ".ico-register")
+    LOG_IN_LINK = (By.CSS_SELECTOR, ".ico-login")
+    LOG_OUT_LINK = (By.CSS_SELECTOR, ".ico-logout")
 
 class RegisterPageLocators():
     REGISTER_FORM = (By.CSS_SELECTOR, ".registration-page>.page-body")
@@ -15,3 +17,10 @@ class RegisterPageLocators():
     FIELD_PASSWORD = (By.CSS_SELECTOR, "#Password")
     FIELD_CONFIRM_PASSWORD = (By.CSS_SELECTOR, "#ConfirmPassword")
     BUTTON_REGISTER = (By.CSS_SELECTOR, "#register-button")
+
+class LoginPageLocators():
+    LOG_IN_FORM = (By.CSS_SELECTOR, ".form-fields>form")
+    FIELD_EMAIL = (By.CSS_SELECTOR, "#Email")
+    FIELD_PASSWORD = (By.CSS_SELECTOR, "#Password")
+    BUTTON_LOG_IN = (By.CSS_SELECTOR, ".login-button")
+    LINK_ACCOUNT = (By.CSS_SELECTOR, ".header-links .account")
