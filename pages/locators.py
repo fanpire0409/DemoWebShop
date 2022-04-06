@@ -22,6 +22,11 @@ class LoginPageLocators():
     BUTTON_LOG_IN = (By.CSS_SELECTOR, ".login-button")
 
 
+class ProductPageLocators():
+    BUTTON_ADD_TO_CART = (By.CSS_SELECTOR, "input#add-to-cart-button-22")
+    ADD_TO_CART_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".bar-notification.success p")
+
+
 class RegisterPageLocators():
     REGISTER_FORM = (By.CSS_SELECTOR, ".registration-page>.page-body")
     REGISTER_SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.result")
