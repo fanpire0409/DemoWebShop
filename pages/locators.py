@@ -27,6 +27,11 @@ class ProductPageLocators():
     ADD_TO_CART_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".bar-notification.success p")
 
 
+class ProductListPageLocators():
+    BUTTON_ADD_TO_CART = (By.CSS_SELECTOR, ".product-box-add-to-cart-button")
+    ADD_TO_CART_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".bar-notification.success p")
+
+
 class RegisterPageLocators():
     REGISTER_FORM = (By.CSS_SELECTOR, ".registration-page>.page-body")
     REGISTER_SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.result")
