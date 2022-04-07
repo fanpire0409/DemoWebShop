@@ -7,6 +7,7 @@ class BasePageLocators():
     LOG_OUT_LINK = (By.CSS_SELECTOR, ".ico-logout")
     LINK_ACCOUNT = (By.CSS_SELECTOR, ".header-links .account")
 
+
 class CustomerPageLocators():
     LINK_PASSWORD_CHANGE = (By.XPATH, "//a[text() = 'Change password']")
     FIELD_OLD_PASSWORD = (By.CSS_SELECTOR, "#OldPassword")
@@ -14,6 +15,14 @@ class CustomerPageLocators():
     FIELD_CONFIRM_NEW_PASSWORD = (By.CSS_SELECTOR, "#ConfirmNewPassword")
     BUTTON_CHANGE_PASSWORD = (By.CSS_SELECTOR, ".change-password-button")
     MESSAGE_CHANGE_PASSWORD = (By.CSS_SELECTOR, "div.result")
+
+
+class LinksLocators():
+    MAIN_LINK = "http://demowebshop.tricentis.com/"
+    PRODUCT_LINK = "http://demowebshop.tricentis.com/health"
+    PRODUCT_LIST_LINK = "http://demowebshop.tricentis.com/books"
+    REGISTER_LINK = "http://demowebshop.tricentis.com/register"
+
 
 class LoginPageLocators():
     LOG_IN_FORM = (By.CSS_SELECTOR, ".form-fields>form")

@@ -1,10 +1,11 @@
 from pages.register_page import RegisterPage
+from pages.locators import LinksLocators
 import pytest
 
 
 @pytest.mark.critical_check
 def test_registration(browser):
-    register_link = "http://demowebshop.tricentis.com/register"
+    register_link = LinksLocators.REGISTER_LINK
     register_page = RegisterPage(browser, register_link)
     register_page.open()
     register_page.should_be_register_form()

@@ -29,7 +29,6 @@ class BasePage():
 
         return {'gender': gender, 'name': name, 'surname': surname, 'email': email, 'password': password}
 
-
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)

@@ -1,12 +1,13 @@
 from pages.main_page import MainPage
 from pages.register_page import RegisterPage
 from pages.login_page import LoginPage
+from pages.locators import LinksLocators
 import pytest
 
 
 @pytest.mark.critical_check
 class TestLink():
-    main_link = "http://demowebshop.tricentis.com/"
+    main_link = LinksLocators.MAIN_LINK
 
     def test_register_link(self, browser):
         main_page = MainPage(browser, self.main_link)

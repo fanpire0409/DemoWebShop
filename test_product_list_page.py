@@ -1,9 +1,10 @@
 from pages.product_list_page import ProductListPage
 from pages.register_page import RegisterPage
 from pages.login_page import LoginPage
+from pages.locators import LinksLocators
 import pytest
 
-link = "http://demowebshop.tricentis.com/books"
+link = LinksLocators.PRODUCT_LIST_LINK
 
 
 @pytest.mark.critical_check
@@ -37,7 +38,7 @@ class TestGuest():
 @pytest.mark.critical_check2
 class TestUser():
     def test_user_add_to_cart(self, browser):
-        register_link = "http://demowebshop.tricentis.com/register"
+        register_link = LinksLocators.REGISTER_LINK
         register_page = RegisterPage(browser, register_link)
         register_page.open()
         user_data = register_page.create_user_data()

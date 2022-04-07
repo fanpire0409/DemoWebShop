@@ -1,10 +1,11 @@
 from pages.login_page import LoginPage
+from pages.locators import LinksLocators
 import pytest
 
 
 @pytest.mark.critical_check
 def test_log_in(browser):
-    register_link = "http://demowebshop.tricentis.com/register"
+    register_link = LinksLocators.REGISTER_LINK
     log_in_page = LoginPage(browser, register_link)
     log_in_page.open()
     user_data = log_in_page.create_user_data()
