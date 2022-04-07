@@ -7,10 +7,8 @@ import pytest
 
 @pytest.mark.critical_check
 class TestLink():
-    main_link = LinksLocators.MAIN_LINK
-
     def test_register_link(self, browser):
-        main_page = MainPage(browser, self.main_link)
+        main_page = MainPage(browser, LinksLocators.MAIN_LINK)
         main_page.open()
         main_page.should_be_register_link()
         main_page.follow_the_register_link()
@@ -18,7 +16,7 @@ class TestLink():
         register_page.should_be_register_url()
 
     def test_log_in_link(self, browser):
-        main_page = MainPage(browser, self.main_link)
+        main_page = MainPage(browser, LinksLocators.MAIN_LINK)
         main_page.open()
         main_page.should_be_log_in_link()
         main_page.follow_the_log_in_link()

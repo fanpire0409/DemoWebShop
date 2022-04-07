@@ -6,6 +6,13 @@ class BasePageLocators():
     LOG_IN_LINK = (By.CSS_SELECTOR, ".ico-login")
     LOG_OUT_LINK = (By.CSS_SELECTOR, ".ico-logout")
     LINK_ACCOUNT = (By.CSS_SELECTOR, ".header-links .account")
+    CART_LINK = (By.CSS_SELECTOR, "#topcartlink .ico-cart")
+
+
+class CartPageLocators():
+    PRODUCT_UNIT_PRICE = (By.CSS_SELECTOR, ".product-unit-price")
+    FIELD_QTY = (By.CSS_SELECTOR, ".qty-input")
+    PRODUCT_SUBTOTAL = (By.CSS_SELECTOR, ".product-subtotal")
 
 
 class CustomerPageLocators():
@@ -22,6 +29,7 @@ class LinksLocators():
     PRODUCT_LINK = "http://demowebshop.tricentis.com/health"
     PRODUCT_LIST_LINK = "http://demowebshop.tricentis.com/books"
     REGISTER_LINK = "http://demowebshop.tricentis.com/register"
+    CART_LINK = "http://demowebshop.tricentis.com/cart"
 
 
 class LoginPageLocators():

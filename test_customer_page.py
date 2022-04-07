@@ -6,8 +6,7 @@ import pytest
 
 @pytest.mark.critical_check
 def test_change_password(browser):
-    register_link = LinksLocators.REGISTER_LINK
-    customer_page = CustomerPage(browser, register_link)
+    customer_page = CustomerPage(browser, LinksLocators.REGISTER_LINK)
     customer_page.open()
     user_data = customer_page.create_user_data()
     customer_page.register_new_user(user_data)

@@ -8,3 +8,5 @@ Completing the site testing task demowebshop.tricentis.com
 <b>--headless</b> указывается для проведения тестирования в headless режиме
 
 Для запуска критичных тестов (блок 1) используется маркировка <i>critical_check</i>
+
+Для запуска критичных тестов (блок 2) используется маркировка <i>critical_check2</i>

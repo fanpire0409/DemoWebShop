@@ -36,6 +36,10 @@ class BasePage():
             return False
         return True
 
+    def follow_the_cart_link(self):
+        cart_link = self.browser.find_element(*BasePageLocators.CART_LINK)
+        cart_link.click()
+
     def follow_the_customer_link(self):
         customer_link = self.browser.find_element(*BasePageLocators.LINK_ACCOUNT)
         customer_link.click()

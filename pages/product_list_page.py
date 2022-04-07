@@ -4,7 +4,7 @@ import numpy as np
 
 
 class ProductListPage(BasePage):
-    def add_to_basket(self):
+    def add_to_cart(self):
         np.random.seed(2)
         button_cart = self.browser.find_elements(*ProductListPageLocators.BUTTON_ADD_TO_CART)
         button_cart = np.random.choice(button_cart)
