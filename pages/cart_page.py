@@ -26,5 +26,11 @@ class CartPage(BasePage):
         products_coast = float(self.browser.find_element(*CartPageLocators.PRODUCT_SUBTOTAL).text)
         assert (product_quantity * product_price) == products_coast, "The cost is wrong!"
 
+    def go_to_one_page_checkout(self):
+        checkbox_terms_of_service = self.browser.find_element(*CartPageLocators.CHECKBOX_TERMS_OF_SERVICE)
+        checkbox_terms_of_service.click()
+        button_checkout = self.browser.find_element(*CartPageLocators.BUTTON_CHECKOUT)
+        button_checkout.click()
+
     def should_be_cart_url(self):
         assert "cart" in self.browser.current_url, "Error! It's not a cart page"

@@ -2,6 +2,10 @@ from .base_page import BasePage
 from .locators import RegisterPageLocators
 
 class RegisterPage(BasePage):
+    def completion_of_registration(self):
+        continue_button = self.browser.find_element(*RegisterPageLocators.BUTTON_REGISTER_CONTINUE)
+        continue_button.click()
+
     def register_new_user(self, user_data):
         if user_data['gender'] == "M":
             register_gender = self.browser.find_element(*RegisterPageLocators.RADIO_GENDER_M)

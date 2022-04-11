@@ -1,4 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
 import faker
 import time
@@ -13,10 +15,17 @@ class BasePage():
     def check_user_log_in(self):
         assert self.is_element_present(*BasePageLocators.LINK_ACCOUNT), "User isn't log in!"
 
-    def create_user_data(self):
-        np.random.seed(2)
-        gender = np.random.choice(["M", "F"])
+    def create_user_address(self):
+        fake = faker.Faker()
+        city = fake.city()
+        address = fake.street_address()
+        zipcode = fake.postcode()
+        phone_number = fake.phone_number()
+        return {'city': city, 'address1': address, 'zipcode': zipcode, 'phone_number': phone_number}
 
+    def create_user_data(self):
+        np.random.seed(666)
+        gender = np.random.choice(["M", "F"])
         fake = faker.Faker()
         if gender == "M":
             name = fake.first_name_male()
@@ -37,6 +46,11 @@ class BasePage():
         return True
 
     def follow_the_cart_link(self):
+        cart_link = self.browser.find_element(*BasePageLocators.CART_LINK)
+        cart_link.click()
+
+    def follow_the_cart_link_after_added_product(self):
+        self.waiting_for_carl_link(*BasePageLocators.CART_LINK_AFTER_ADDED_PRODUCT)
         cart_link = self.browser.find_element(*BasePageLocators.CART_LINK)
         cart_link.click()
 
@@ -64,3 +78,8 @@ class BasePage():
 
     def should_be_register_link(self):
         assert self.is_element_present(*BasePageLocators.REGISTER_LINK), "Register link is not presented"
+
+    def waiting_for_carl_link(self, how, what, timeout=4, qty='1'):
+        WebDriverWait(self.browser, timeout).until(
+            EC.text_to_be_present_in_element((how, what), qty)
+        )

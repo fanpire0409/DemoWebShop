@@ -3,6 +3,9 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(RegisterPage):
+    def checkout_as_guest(self):
+        checkout_as_guest_button = self.browser.find_element(*LoginPageLocators.BUTTON_CHECKOUT_AS_GUEST)
+        checkout_as_guest_button.click()
 
     def returning_customer(self, user_data):
         login_email = self.browser.find_element(*LoginPageLocators.FIELD_EMAIL)
@@ -17,3 +20,7 @@ class LoginPage(RegisterPage):
 
     def should_be_log_in_url(self):
         assert "login" in self.browser.current_url, "Error! It's not a log in page"
+
+    def go_to_registration_by_button(self):
+        registration_button = self.browser.find_element(*LoginPageLocators.BUTTON_REGISTER)
+        registration_button.click()
